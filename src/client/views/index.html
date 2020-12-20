@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+                Logo
+            </div>
+            <div class="">
+                navigation
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <!-- <input id="text-to-analyze" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter text..."> -->
+                    <textarea name="input" id="text-to-analyze" placeholder="Enter text..." required></textarea>
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            <section>
+
+            <section>
+                <strong>Text Analysis Results:</strong>
+                <div id="results"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>This Webpage Uses MeaningCloud API</p>
+        </footer>
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+           </script>
+    </body>
+</html>
